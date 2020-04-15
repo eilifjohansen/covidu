@@ -8,7 +8,7 @@
   "author": "Eilif Johansen <eilif@eilifjohansen.no>",
   "private": true,
   "scripts": {
-    "start": "pm2 start index.js",
+    "start": "node index.js",
     "dev": "quasar dev",
     "build": "quasar build",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
