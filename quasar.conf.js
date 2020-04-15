@@ -84,16 +84,13 @@ module.exports = function(/* ctx */) {
           }
         });
       }
-    }, // opens browser window automatically
+    }, // opens browser window automatically // }, // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     /*devServer: {
       https: false,
       port: 8080,
-      open: true  */ // },
-
-    // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
-    devServer: {
+      open: true  */ devServer: {
       open: false, // leave this here for Codesandbox to work
       public: "http://0.0.0.0" // leave this here for Codesandbox to work
     },
@@ -119,9 +116,9 @@ module.exports = function(/* ctx */) {
         display: "standalone",
         orientation: "portrait",
 
-        background_color: "#ffffff",
+        background_color: "#075e54",
 
-        theme_color: "#027be3",
+        theme_color: "#075e54",
         icons: [
           {
             src: "statics/icons/icon-128x128.png",
