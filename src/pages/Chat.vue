@@ -64,10 +64,23 @@ export default {
   },
   methods: {
     sendMessage() {
-      this.messages.push({
-        text: this.newMessage,
-        from: "Me"
-      });
+      if (this.newMessage.length != 0) {
+        this.messages.push({
+          text: this.newMessage,
+          from: "Me"
+        });
+      }
+
+      if (this.newMessage.length == 0) {
+        this.messages.push({
+          text: "[Empty message]",
+          from: "Me"
+        });
+        this.messages.push({
+          text: "Woups! That message looks empty... Try saying a country name.",
+          from: "Covidu"
+        });
+      }
 
       const payload = {
         location: this.newMessage,
@@ -75,20 +88,22 @@ export default {
         userid: "123"
       };
 
-      fetch("https://hook.integromat.com/dtfbvlarirwglzhfsav0inoshn9kggxs", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      }).then(response => {
-        response.text().then(result => {
-          this.messages.push({
-            text: result.replace(/\n/g, "<br />"),
-            from: "Covidu"
+      if (this.newMessage.length != 0) {
+        fetch("https://hook.integromat.com/dtfbvlarirwglzhfsav0inoshn9kggxs", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        }).then(response => {
+          response.text().then(result => {
+            this.messages.push({
+              text: result.replace(/\n/g, "<br />"),
+              from: "Covidu"
+            });
           });
         });
-      });
+      }
 
       this.clearMessage();
     },
