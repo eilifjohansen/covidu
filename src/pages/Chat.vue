@@ -2,14 +2,12 @@
   <q-page ref="pageChat" class="page-chat flex column">
     <div class="q-pa-md column col justify-end">
       <q-chat-message
-        class="text-body2"
         v-for="message in messages"
         :key="message.id"
         :name="message.from"
         :text="[message.text]"
         :sent="message.from == 'Me' ? true : false"
-        text-color="white"
-        bg-color="primary"
+        class="text-body2"
       >
         <template v-slot:avatar v-if="message.from == 'Covidu' ? true : false">
           <img
@@ -117,3 +115,20 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.q-message-text--sent {
+  background: #1976d2 !important;
+}
+
+.q-message-text-content--sent {
+  color: #fff;
+}
+
+.q-message-text--received {
+  background: #f1f0f0 !important;
+}
+
+.q-message-text-content--received {
+  color: #000;
+}
+</style>
