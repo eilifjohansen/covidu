@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     sendMessage() {
-      if (this.newMessage.length >= 4) {
+      if (this.newMessage.length >= 4 && this.newMessage.length <= 100) {
         this.messages.push({
           text: this.newMessage,
           from: "Me"
@@ -79,6 +79,18 @@ export default {
         this.messages.push({
           text:
             "Woups! I don't know any countries with less than 4 characters... Try again.",
+          from: "Covidu"
+        });
+      }
+
+      if (this.newMessage.length >= 101) {
+        this.messages.push({
+          text: "[large message]",
+          from: "Me"
+        });
+        this.messages.push({
+          text:
+            "Woups! I can not respond to messages with more than 100 characters... Try again.",
           from: "Covidu"
         });
       }
@@ -100,7 +112,7 @@ export default {
         userid: "123"
       };
 
-      if (this.newMessage.length >= 4) {
+      if (this.newMessage.length >= 4 && this.newMessage.length <= 100) {
         fetch("https://hook.integromat.com/dtfbvlarirwglzhfsav0inoshn9kggxs", {
           method: "POST",
           headers: {
