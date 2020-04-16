@@ -117,7 +117,8 @@ export default {
 </script>
 <style lang="scss">
 .q-message-text--sent {
-  background: #1976d2 !important;
+  background: #1976d2;
+  color: #1976d2;
 }
 
 .q-message-text-content--sent {
@@ -125,7 +126,8 @@ export default {
 }
 
 .q-message-text--received {
-  background: #f1f0f0 !important;
+  background: #f1f0f0;
+  color: #f1f0f0;
 }
 
 .q-message-text-content--received {
