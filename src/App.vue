@@ -6,6 +6,18 @@
 
 <script>
 export default {
-  name: 'App'
-}
+  name: "App"
+};
 </script>
+
+<style lang="scss">
+.notifyme {
+  .q-notification__actions {
+    color: primary;
+  }
+
+  .q-btn__wrapper {
+    background: white;
+  }
+}
+</style>

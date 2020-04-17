@@ -1,6 +1,6 @@
 {
   "name": "covidu",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hi, I'm Covidu! Name a country, and I will get you the latest Coronavirus statistics that I can get hold of. My data source is: Johns Hopkins CSSE.",
   "productName": "Covidu",
   "cordovaId": "org.cordova.covidu.app",

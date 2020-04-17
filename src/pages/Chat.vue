@@ -190,6 +190,14 @@ export default {
     if (navigator.onLine != false) {
       this.online = true;
     }
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.update();
+        }
+      });
+    }
   },
   watch: {
     messages: function(val) {

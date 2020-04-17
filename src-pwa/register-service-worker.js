@@ -1,4 +1,5 @@
 import { register } from "register-service-worker";
+import { Notify } from "quasar";
 
 // The ready(), registered(), cached(), updatefound() and updated()
 // events passes a ServiceWorkerRegistration instance in their arguments.
@@ -12,29 +13,33 @@ register(process.env.SERVICE_WORKER_FILE, {
   // registrationOptions: { scope: './' },
 
   ready(/* registration */) {
-    // console.log('Service worker is active.')
+    // console.log("Service worker is active.");
   },
 
   registered(/* registration */) {
-    // console.log('Service worker has been registered.')
+    // console.log("Service worker has been registered.");
   },
 
   cached(/* registration */) {
-    // console.log('Content has been cached for offline use.')
+    //  console.log("Content has been cached for offline use.");
   },
 
   updatefound(/* registration */) {
-    // console.log('New content is downloading.')
+    // console.log("New content is downloading.");
   },
 
   updated(registration) {
     // registration -> a ServiceWorkerRegistration instance
     console.log("New content is available; please refresh.");
     Notify.create({
-      message: i18n.t("messages.update_available"),
+      message: "New content is available.",
       icon: "cloud_download",
-      closeBtn: i18n.t("labels.update"),
-      timeout: 10000,
+      closeBtn: "Refresh",
+      timeout: 20000,
+      color: "primary",
+      textColor: "white",
+      position: "left",
+      classes: "notifyme",
       onDismiss() {
         location.reload(true);
       }
@@ -42,10 +47,13 @@ register(process.env.SERVICE_WORKER_FILE, {
   },
 
   offline() {
-    // console.log('No internet connection found. App is running in offline mode.')
+    console
+      .log
+      // "No internet connection found. App is running in offline mode."
+      ();
   },
 
-  error(/* err */) {
-    // console.error('Error during service worker registration:', err)
+  error(err) {
+    // console.error("Error during service worker registration:", err);
   }
 });
