@@ -149,7 +149,7 @@ export default {
           // true|false
           this.messages.push({
             text:
-              "Woups! Seems like there might be a internet connection issue... <br><br>Try to reload the page.",
+              "You have lost connection to the internet... Try to reload the page.",
             from: "Covidu"
           });
         }
