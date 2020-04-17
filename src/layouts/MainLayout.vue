@@ -49,6 +49,7 @@
             href="https://coronavirus.jhu.edu/"
             target="_blank"
             style="color:#1976d2"
+            rel="noreferrer"
             >Johns Hopkins CSSE
             <svg
               aria-hidden="true"

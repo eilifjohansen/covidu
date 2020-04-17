@@ -1,5 +1,12 @@
 <template>
-  <q-item clickable class="grey-10" tag="a" target="_blank" :href="link">
+  <q-item
+    clickable
+    class="grey-10"
+    tag="a"
+    target="_blank"
+    rel="noreferrer"
+    :href="link"
+  >
     <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" />
     </q-item-section>
