@@ -31,13 +31,11 @@ register(process.env.SERVICE_WORKER_FILE, {
   updated(registration) {
     // registration -> a ServiceWorkerRegistration instance
     console.log("New content is available; please refresh.");
-    window.location.reload(true);
 
-    /*Notify.create({
+    Notify.create({
       message: "New content is available.",
       icon: "cloud_download",
-      closeBtn: "Refresh",
-      timeout: 10000,
+      timeout: 100,
       color: "primary",
       textColor: "white",
       position: "left",
@@ -45,7 +43,7 @@ register(process.env.SERVICE_WORKER_FILE, {
       onDismiss() {
         window.location.reload(true);
       }
-    });*/
+    });
   },
 
   offline() {
