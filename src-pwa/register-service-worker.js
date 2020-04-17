@@ -33,10 +33,10 @@ register(process.env.SERVICE_WORKER_FILE, {
     console.log("New content is available; please refresh.");
 
     Notify.create({
-      message: "Updating...",
+      message: "New Update Available",
       icon: "cloud_download",
       closeBtn: "Refresh",
-      timeout: 1000,
+      timeout: 100000,
       color: "primary",
       textColor: "white",
       position: "left",
