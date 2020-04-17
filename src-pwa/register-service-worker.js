@@ -35,7 +35,7 @@ register(process.env.SERVICE_WORKER_FILE, {
     Notify.create({
       message: "New content is available.",
       icon: "cloud_download",
-      timeout: 100,
+      timeout: 1000,
       color: "primary",
       textColor: "white",
       position: "left",
