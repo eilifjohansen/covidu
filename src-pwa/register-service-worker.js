@@ -35,7 +35,8 @@ register(process.env.SERVICE_WORKER_FILE, {
     Notify.create({
       message: "Updating...",
       icon: "cloud_download",
-      timeout: 1000,
+      closeBtn: "Refresh",
+      timeout: 10000,
       color: "primary",
       textColor: "white",
       position: "left",
