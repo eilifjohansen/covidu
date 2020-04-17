@@ -1,5 +1,5 @@
 import { register } from "register-service-worker";
-import { Notify } from "quasar";
+//import { Notify } from "quasar";
 
 // The ready(), registered(), cached(), updatefound() and updated()
 // events passes a ServiceWorkerRegistration instance in their arguments.
@@ -31,8 +31,9 @@ register(process.env.SERVICE_WORKER_FILE, {
   updated(registration) {
     // registration -> a ServiceWorkerRegistration instance
     console.log("New content is available; please refresh.");
+    window.location.reload(true);
 
-    Notify.create({
+    /*Notify.create({
       message: "New content is available.",
       icon: "cloud_download",
       closeBtn: "Refresh",
@@ -44,7 +45,7 @@ register(process.env.SERVICE_WORKER_FILE, {
       onDismiss() {
         window.location.reload(true);
       }
-    });
+    });*/
   },
 
   offline() {
