@@ -41,7 +41,7 @@ register(process.env.SERVICE_WORKER_FILE, {
       position: "left",
       classes: "notifyme",
       onDismiss() {
-        location.reload(true);
+        window.location.reload(true);
       }
     });
   },
