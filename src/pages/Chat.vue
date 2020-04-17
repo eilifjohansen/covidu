@@ -64,21 +64,21 @@ export default {
   },
   methods: {
     sendMessage() {
-      if (this.newMessage.length >= 4 && this.newMessage.length <= 100) {
+      if (this.newMessage.length >= 2 && this.newMessage.length <= 100) {
         this.messages.push({
           text: this.newMessage,
           from: "Me"
         });
       }
 
-      if (this.newMessage.length >= 1 && this.newMessage.length <= 3) {
+      if (this.newMessage.length == 1) {
         this.messages.push({
           text: this.newMessage,
           from: "Me"
         });
         this.messages.push({
           text:
-            "Woups! I don't know any countries with less than 4 characters... Try again.",
+            "Woups! I don't know any countries with only 1 character... Try again.",
           from: "Covidu"
         });
       }
@@ -112,7 +112,7 @@ export default {
         userid: "123"
       };
 
-      if (this.newMessage.length >= 4 && this.newMessage.length <= 100) {
+      if (this.newMessage.length >= 2 && this.newMessage.length <= 100) {
         fetch("https://hook.integromat.com/dtfbvlarirwglzhfsav0inoshn9kggxs", {
           method: "POST",
           headers: {
