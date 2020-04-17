@@ -5,7 +5,20 @@
     </q-item-section>
 
     <q-item-section>
-      <q-item-label style="text-decoration:underline">{{ title }}</q-item-label>
+      <q-item-label class="underline"
+        >{{ title }}
+        <svg
+          aria-hidden="true"
+          role="presentation"
+          focusable="false"
+          viewBox="0 0 24 24"
+          class="q-icon notranslate"
+        >
+          <path
+            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+          ></path>
+        </svg>
+      </q-item-label>
     </q-item-section>
   </q-item>
 </template>
@@ -34,3 +47,13 @@ export default {
   }
 };
 </script>
+<style>
+.underline {
+  text-decoration: underline !important;
+  color: #1976d2;
+}
+
+.q-item__section--side > .q-icon {
+  color: #1976d2;
+}
+</style>

@@ -40,7 +40,10 @@
 
         <p>
           My data source is:
-          <a href="https://coronavirus.jhu.edu/" target="_blank"
+          <a
+            href="https://coronavirus.jhu.edu/"
+            target="_blank"
+            style="color:#1976d2"
             >Johns Hopkins CSSE
             <svg
               aria-hidden="true"
@@ -101,17 +104,17 @@ export default {
       essentialLinks: [
         {
           title: "Covidu on Messenger",
-          icon: "link",
+          icon: "chat",
           link: "https://m.me/covidu"
         },
         {
           title: "About the project",
-          icon: "link",
+          icon: "info",
           link: "https://devpost.com/software/covidu"
         },
         {
           title: "Like us on Facebook",
-          icon: "link",
+          icon: "share",
           link: "https://www.facebook.com/covidu"
         }
       ]
