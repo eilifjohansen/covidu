@@ -31,7 +31,7 @@
       </div>
       <div style="padding: 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.12);">
         <p style="margin-top: 16px">
-          Hi, I'm Covidu, the Coronavirus Updates Chatbot.
+          Hi, I'm Covidu – The Coronavirus Updates Chatbot.
         </p>
         <p>
           Name a country, and I will get you the latest Coronavirus statistics
