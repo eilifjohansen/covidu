@@ -52,10 +52,9 @@
     <q-page-sticky expand position="top" v-if="online == false">
       <q-toolbar class="bg-accent text-white">
         <template v-slot:avatar>
-          <q-icon name="signal_wifi_off" color="danger" />
-        </template>
-        You have lost connection to the internet. This app is offline. Try to
-        reload the page.
+          <q-icon name="signal_wifi_off" color="danger" /> </template
+        ><br />
+        You have lost connection to the internet. Try to reload the page.<br /><br />
       </q-toolbar>
     </q-page-sticky>
   </q-page>
@@ -151,7 +150,7 @@ export default {
           // true|false
           this.messages.push({
             text:
-              "Woups! Seems like there might be a internet connection issue... Try to reload.",
+              "Woups! Seems like there might be a internet connection issue... <br><br>Try to reload the page.",
             from: "Covidu"
           });
         }
@@ -176,6 +175,15 @@ export default {
     }
   },
   updated() {
+    if (navigator.onLine == false) {
+      this.online = false;
+    }
+
+    if (navigator.onLine != false) {
+      this.online = true;
+    }
+  },
+  mounted() {
     if (navigator.onLine == false) {
       this.online = false;
     }
