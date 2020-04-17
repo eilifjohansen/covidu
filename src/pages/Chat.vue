@@ -47,6 +47,17 @@
         </q-form>
       </q-toolbar>
     </q-footer>
+
+    <!-- place QPageSticky at end of page -->
+    <q-page-sticky expand position="top" v-if="online == false">
+      <q-toolbar class="bg-accent text-white">
+        <template v-slot:avatar>
+          <q-icon name="signal_wifi_off" color="danger" />
+        </template>
+        You have lost connection to the internet. This app is offline. Try to
+        reload the page.
+      </q-toolbar>
+    </q-page-sticky>
   </q-page>
 </template>
 
@@ -62,7 +73,8 @@ export default {
             "Hi, what country would you like to check the latest coronavirus stats in?",
           from: "Covidu"
         }
-      ]
+      ],
+      online: true
     };
   },
   methods: {
@@ -122,14 +134,27 @@ export default {
             "Content-Type": "application/json"
           },
           body: JSON.stringify(payload)
-        }).then(response => {
-          response.text().then(result => {
-            this.messages.push({
-              text: result.replace(/\n/g, "<br />"),
-              from: "Covidu"
+        })
+          .then(response => {
+            response.text().then(result => {
+              this.messages.push({
+                text: result.replace(/\n/g, "<br />"),
+                from: "Covidu"
+              });
             });
+          })
+          .catch(function(err) {
+            console.log(err);
           });
-        });
+
+        if (navigator.onLine == false) {
+          // true|false
+          this.messages.push({
+            text:
+              "Woups! Seems like there might be a internet connection issue... Try to reload.",
+            from: "Covidu"
+          });
+        }
       }
 
       this.clearMessage();
@@ -138,11 +163,25 @@ export default {
       this.newMessage = "";
       // this.$refs.newMessage.focus()
     },
+    onLine() {
+      if (navigator.onLine != false) {
+        this.online = false;
+      }
+    },
     scrollToBottom() {
       let pageChat = this.$refs.pageChat.$el;
       setTimeout(() => {
         window.scrollTo(0, pageChat.scrollHeight);
       }, 20);
+    }
+  },
+  updated() {
+    if (navigator.onLine == false) {
+      this.online = false;
+    }
+
+    if (navigator.onLine != false) {
+      this.online = true;
     }
   },
   watch: {
