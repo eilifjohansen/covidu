@@ -1,11 +1,11 @@
 {
   "name": "covidu",
   "version": "0.0.1",
-  "description": "Covidu – The Coronavirus Updates Chatbot",
+  "description": "Hi, I'm Covidu! Name a country, and I will get you the latest Coronavirus statistics that I can get hold of. My data source is: Johns Hopkins CSSE.",
   "productName": "Covidu",
   "cordovaId": "org.cordova.covidu.app",
   "capacitorId": "",
-  "author": "Eilif Johansen <eilif@eilifjohansen.no>",
+  "author": "Eilif Johansen <eilif@inklud.no>",
   "private": true,
   "scripts": {
     "start": "node index.js",

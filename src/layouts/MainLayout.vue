@@ -3,15 +3,20 @@
     <q-header class="bg-primary text-white collapse">
       <q-toolbar>
         <q-toolbar-title>
-          <!--<div class="absolute-center">-->
           <q-avatar>
             <img src="statics/covidu.png" />
           </q-avatar>
           Covidu
-          <!-- </div>-->
         </q-toolbar-title>
 
-        <q-btn dense flat round icon="info" @click="right = !right" />
+        <q-btn
+          dense
+          flat
+          round
+          icon="info"
+          @click="right = !right"
+          aria-label="Info"
+        />
       </q-toolbar>
     </q-header>
 
@@ -58,9 +63,6 @@
           >.
         </p>
       </div>
-      <!-- <q-toolbar-title style="margin-top: 10px; margin-bottom: 10px;">
-        Links
-      </q-toolbar-title>-->
       <q-list style="margin-top: 10px">
         <EssentialLink
           v-for="link in essentialLinks"
@@ -68,7 +70,6 @@
           v-bind="link"
         />
       </q-list>
-      <!-- drawer content -->
     </q-drawer>
 
     <q-page-container>

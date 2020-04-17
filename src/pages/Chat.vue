@@ -11,6 +11,8 @@
       >
         <template v-slot:avatar v-if="message.from == 'Covidu' ? true : false">
           <img
+            aria-hidden="true"
+            role="presentation"
             class="q-message-avatar q-message-avatar--sent"
             src="statics/covidu.png"
           />
@@ -32,6 +34,7 @@
           >
             <template v-slot:after>
               <q-btn
+                aria-label="Send message"
                 @click="sendMessage"
                 round
                 dense
