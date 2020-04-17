@@ -50,11 +50,10 @@
 
     <!-- place QPageSticky at end of page -->
     <q-page-sticky expand position="top" v-if="online == false">
-      <q-toolbar class="bg-accent text-white">
-        <template v-slot:avatar>
-          <q-icon name="signal_wifi_off" color="danger" /> </template
-        ><br />
-        You have lost connection to the internet. Try to reload the page.<br /><br />
+      <q-toolbar class="bg-negative text-white">
+        <br />
+        You have lost connection to the internet. <br />Try to reload the
+        page.<br /><br />
       </q-toolbar>
     </q-page-sticky>
   </q-page>
