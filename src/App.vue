@@ -17,6 +17,7 @@ export default {
   }
 
   .q-btn__wrapper {
+    display: none;
     background: white;
   }
 }
