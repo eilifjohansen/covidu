@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
-            <img src="statics/covidu.png" />
+            <img src="statics/covidu.png" alt="The coronavirus chatbot" />
           </q-avatar>
           Covidu
         </q-toolbar-title>
