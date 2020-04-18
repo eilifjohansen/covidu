@@ -36,12 +36,10 @@ register(process.env.SERVICE_WORKER_FILE, {
 
   updated(registration) {
     // registration -> a ServiceWorkerRegistration instance
-    // fully customizable
     Loading.show({
       spinner: QSpinnerGears,
-      spinnerColor: "negative",
+      spinnerColor: "white",
       backgroundColor: "primary"
-      // message: "A new update is available! Updating..."
     });
 
     window.location.reload(true);
