@@ -40,6 +40,7 @@
                 flat
                 color="white"
                 icon="send"
+                type="submit"
               />
             </template>
           </q-input>
