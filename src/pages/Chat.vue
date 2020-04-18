@@ -6,10 +6,9 @@
         :key="message.id"
         :name="message.from"
         :text="[message.text]"
-        :stamp="message.stamp"
         :sent="message.from == 'Me' ? true : false"
         class="text-body2"
-      >
+        ><!-- :stamp="message.stamp" -->
         <template v-slot:avatar v-if="message.from == 'Covidu' ? true : false">
           <img
             aria-hidden="true"
