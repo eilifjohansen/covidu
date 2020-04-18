@@ -32,6 +32,12 @@ register(process.env.SERVICE_WORKER_FILE, {
 
   updatefound(/* registration */) {
     // console.log("New content is downloading.");
+    Loading.show({
+      spinner: QSpinnerGears,
+      spinnerColor: "white",
+      backgroundColor: "primary"
+      // message: "A new update is available! Updating..."
+    });
   },
 
   updated(registration) {
