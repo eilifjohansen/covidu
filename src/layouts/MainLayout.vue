@@ -7,7 +7,9 @@
             <q-avatar size="42px">
               <img src="statics/covidu.png" alt="The coronavirus chatbot" />
             </q-avatar>
-            <span class="text-h5" style="padding-left: 10px">Covidu</span>
+            <h1 class="text-h5" style="padding-left: 10px; margin: 0px">
+              Covidu
+            </h1>
           </q-btn>
         </q-toolbar-title>
 
@@ -31,9 +33,12 @@
           <img src="statics/covidu.png" alt="Profile picture of Covidu" />
         </q-avatar>
         <div class="text-center">
-          <div class="text-weight-bold, text-h6" style="margin-top:0px">
+          <h2
+            class="text-weight-bold, text-h6"
+            style="margin-top:0px;margin-bottom: 0px;"
+          >
             Covidu – The Coronavirus Updates Chatbot
-          </div>
+          </h2>
         </div>
       </div>
       <div style="padding: 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.12);">
