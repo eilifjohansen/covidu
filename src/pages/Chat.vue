@@ -6,6 +6,7 @@
         :key="message.id"
         :name="message.from"
         :text="[message.text]"
+        :stamp="message.stamp"
         :sent="message.from == 'Me' ? true : false"
         class="text-body2"
       >
@@ -70,7 +71,8 @@ export default {
           id: 1,
           text:
             "Hi, what country would you like to check the latest coronavirus stats in?",
-          from: "Covidu"
+          from: "Covidu",
+          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
         }
       ],
       online: true
@@ -81,42 +83,51 @@ export default {
       if (this.newMessage.length >= 2 && this.newMessage.length <= 100) {
         this.messages.push({
           text: this.newMessage,
-          from: "Me"
+          from: "Me",
+          stamp: new Date()
+            .toLocaleTimeString("no-NB")
+            .replace(/(:\d{2}| [AP]M)$/, "")
         });
       }
 
       if (this.newMessage.length == 1) {
         this.messages.push({
           text: this.newMessage,
-          from: "Me"
+          from: "Me",
+          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
         });
         this.messages.push({
           text:
             "Woups! I don't know any countries with only 1 character... Try again.",
-          from: "Covidu"
+          from: "Covidu",
+          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
         });
       }
 
       if (this.newMessage.length >= 101) {
         this.messages.push({
           text: "[large message]",
-          from: "Me"
+          from: "Me",
+          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
         });
         this.messages.push({
           text:
             "Woups! I can not respond to messages with more than 100 characters... Try again.",
-          from: "Covidu"
+          from: "Covidu",
+          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
         });
       }
 
       if (this.newMessage.length == 0) {
         this.messages.push({
           text: "[Empty message]",
-          from: "Me"
+          from: "Me",
+          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
         });
         this.messages.push({
           text: "Woups! That message looks empty... Try saying a country name.",
-          from: "Covidu"
+          from: "Covidu",
+          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
         });
       }
 
@@ -139,7 +150,15 @@ export default {
               if (result != "Accepted") {
                 this.messages.push({
                   text: result.replace(/\n/g, "<br />"),
-                  from: "Covidu"
+                  from: "Covidu",
+                  stamp: new Date()
+                    .toLocaleTimeString("no-NB")
+                    .replace(
+                      /(:\d{2}| [AP]M)$/,
+                      ""
+                    ) /*+
+                    " " +
+                    new Date().toLocaleDateString("no-NB")*/
                 });
               }
 
@@ -147,7 +166,10 @@ export default {
                 this.messages.push({
                   text:
                     "Oh no! The place i get stats from is down for maintenance. Please try again later.",
-                  from: "Covidu"
+                  from: "Covidu",
+                  stamp: new Date()
+                    .toLocaleTimeString()
+                    .replace(/(:\d{2}| [AP]M)$/, "")
                 });
               }
             });
@@ -157,7 +179,10 @@ export default {
 
             this.messages.push({
               text: "Woups! Something went wrong. We're working on fixing it.",
-              from: "Covidu"
+              from: "Covidu",
+              stamp: new Date()
+                .toLocaleTimeString()
+                .replace(/(:\d{2}| [AP]M)$/, "")
             });
           });
 
@@ -166,7 +191,10 @@ export default {
           this.messages.push({
             text:
               "You have lost connection to the internet... Try to reload the page.",
-            from: "Covidu"
+            from: "Covidu",
+            stamp: new Date()
+              .toLocaleTimeString()
+              .replace(/(:\d{2}| [AP]M)$/, "")
           });
         }
       }
@@ -235,6 +263,11 @@ export default {
 
 .q-message-text-content--sent {
   color: #fff;
+  text-align: right;
+}
+
+.q-message-text-content--sent .q-message-stamp {
+  color: #fff !important;
 }
 
 .q-message-text--received {
