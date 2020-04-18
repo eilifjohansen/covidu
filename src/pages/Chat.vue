@@ -34,9 +34,8 @@
           >
             <template v-slot:after>
               <q-btn
-                aria-label="Send message"
+                aria-label="Send"
                 @click="sendMessage"
-                round
                 dense
                 flat
                 color="white"

@@ -3,16 +3,18 @@
     <q-header class="bg-primary text-white collapse">
       <q-toolbar>
         <q-toolbar-title>
-          <q-avatar>
-            <img src="statics/covidu.png" alt="The coronavirus chatbot" />
-          </q-avatar>
-          Covidu
+          <q-btn @click="doUpdate()" class="homeButton" to="/">
+            <q-avatar size="42px">
+              <img src="statics/covidu.png" alt="The coronavirus chatbot" />
+            </q-avatar>
+            <span style="padding-left: 10px">Covidu</span>
+          </q-btn>
         </q-toolbar-title>
 
         <q-btn
+          class="only-mobile"
           dense
           flat
-          round
           icon="info"
           @click="right = !right"
           aria-label="Info"
@@ -26,7 +28,7 @@
         style="margin-top: 10px; padding-bottom: 5px;  border-bottom: 1px solid rgba(0, 0, 0, 0.12);"
       >
         <q-avatar size="106px" class="q-mb-sm">
-          <img src="statics/covidu.png" />
+          <img src="statics/covidu.png" alt="Profile picture of Covidu" />
         </q-avatar>
         <div class="text-center">
           <div class="text-weight-bold, text-h6" style="margin-top:0px">
@@ -121,6 +123,22 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    doUpdate() {
+      window.location.reload(true);
+    }
   }
 };
 </script>
+<style>
+.homeButton .q-btn__wrapper:before {
+  box-shadow: none;
+}
+
+@media screen and (min-width: 1006px) {
+  .only-mobile {
+    display: none !important;
+  }
+}
+</style>
