@@ -34,11 +34,11 @@ register(process.env.SERVICE_WORKER_FILE, {
 
     Notify.create({
       html: true,
-      message: "New Update Available<br>It only takes 3 seconds",
+      message: "New Update Available<br>Refresh to update",
       title: "hello",
       icon: "cloud_download",
       closeBtn: "Refresh now",
-      timeout: 100000,
+      timeout: 1000000,
       color: "negative",
       textColor: "white",
       position: "left",
