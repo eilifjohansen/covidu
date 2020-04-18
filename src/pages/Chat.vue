@@ -136,10 +136,20 @@ export default {
         })
           .then(response => {
             response.text().then(result => {
-              this.messages.push({
-                text: result.replace(/\n/g, "<br />"),
-                from: "Covidu"
-              });
+              if (result != "Accepted") {
+                this.messages.push({
+                  text: result.replace(/\n/g, "<br />"),
+                  from: "Covidu"
+                });
+              }
+
+              if (result == "Accepted") {
+                this.messages.push({
+                  text:
+                    "Oh no! The place i get stats from is down for maintenance. Please try again later.",
+                  from: "Covidu"
+                });
+              }
             });
           })
           .catch(function(err) {
