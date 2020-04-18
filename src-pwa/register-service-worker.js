@@ -30,14 +30,8 @@ register(process.env.SERVICE_WORKER_FILE, {
     //  console.log("Content has been cached for offline use.");
   },
 
-  updatefound(registration) {
+  updatefound(/*registration*/) {
     // console.log("New content is downloading.");
-    Loading.show({
-      spinner: QSpinnerGears,
-      spinnerColor: "negative",
-      backgroundColor: "primary"
-      // message: "A new update is available! Updating..."
-    });
   },
 
   updated(registration) {
@@ -45,7 +39,7 @@ register(process.env.SERVICE_WORKER_FILE, {
     // fully customizable
     Loading.show({
       spinner: QSpinnerGears,
-      spinnerColor: "white",
+      spinnerColor: "negative",
       backgroundColor: "primary"
       // message: "A new update is available! Updating..."
     });
