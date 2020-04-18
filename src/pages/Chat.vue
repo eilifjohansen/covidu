@@ -228,4 +228,8 @@ export default {
 .q-message-text-content--received {
   color: #000;
 }
+
+.q-message-avatar--sent {
+  margin-left: 0px;
+}
 </style>
