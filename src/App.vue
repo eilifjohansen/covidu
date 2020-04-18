@@ -13,11 +13,12 @@ export default {
 <style lang="scss">
 .notifyme {
   .q-notification__actions {
-    color: primary;
+    color: black;
   }
 
   .q-btn__wrapper {
     background: white;
+    text-transform: initial;
   }
 }
 </style>
