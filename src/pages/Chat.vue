@@ -64,6 +64,7 @@ export default {
   data() {
     return {
       newMessage: "",
+      userId: Date.now(),
       messages: [
         {
           id: 1,
@@ -120,9 +121,9 @@ export default {
       }
 
       const payload = {
-        location: this.newMessage,
-        webhook: "https://webhook.site/0878e958-df57-4a07-8f59-b43a4d888609",
-        userid: "123"
+        message: this.newMessage,
+        userid: this.userId,
+        timestamp: Date.now()
       };
 
       if (this.newMessage.length >= 2 && this.newMessage.length <= 100) {
