@@ -8,7 +8,7 @@
               <img src="statics/covidu.png" alt="The coronavirus chatbot" />
             </q-avatar>
             <h1 class="text-h5" style="padding-left: 10px; margin: 0px">
-              Covidu :)
+              Covidu
             </h1>
           </q-btn>
         </q-toolbar-title>
