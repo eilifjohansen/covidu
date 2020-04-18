@@ -7,7 +7,7 @@
             <q-avatar size="42px">
               <img src="statics/covidu.png" alt="The coronavirus chatbot" />
             </q-avatar>
-            <span style="padding-left: 10px">Covidu</span>
+            <span class="text-h5" style="padding-left: 10px">Covidu</span>
           </q-btn>
         </q-toolbar-title>
 
@@ -134,6 +134,11 @@ export default {
 <style>
 .homeButton .q-btn__wrapper:before {
   box-shadow: none;
+}
+
+.homeButton .q-btn__wrapper {
+  padding-left: 0px;
+  text-transform: initial;
 }
 
 @media screen and (min-width: 1006px) {
