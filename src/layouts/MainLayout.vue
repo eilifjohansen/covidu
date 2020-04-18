@@ -6,7 +6,7 @@
           <q-avatar>
             <img src="statics/covidu.png" alt="The coronavirus chatbot" />
           </q-avatar>
-          Covidu Smile
+          Covidu
         </q-toolbar-title>
 
         <q-btn

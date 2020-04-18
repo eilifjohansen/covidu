@@ -27,7 +27,7 @@ register(process.env.SERVICE_WORKER_FILE, {
     // console.log("New content is downloading.");
   },
 
-  updated(registration) {
+  updated(/* registration */) {
     // registration -> a ServiceWorkerRegistration instance
   },
 
@@ -35,7 +35,7 @@ register(process.env.SERVICE_WORKER_FILE, {
     // console .log "No internet connection found. App is running in offline mode." ();
   },
 
-  error(err) {
+  error(/*err*/) {
     // console.error("Error during service worker registration:", err);
   }
 });
