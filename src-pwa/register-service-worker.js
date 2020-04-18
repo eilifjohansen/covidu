@@ -1,4 +1,11 @@
 import { register } from "register-service-worker";
+import {
+  Loading,
+
+  // optional!, for example below
+  // with custom spinner
+  QSpinnerGears
+} from "quasar";
 
 // The ready(), registered(), cached(), updatefound() and updated()
 // events passes a ServiceWorkerRegistration instance in their arguments.
@@ -27,8 +34,15 @@ register(process.env.SERVICE_WORKER_FILE, {
     // console.log("New content is downloading.");
   },
 
-  updated(/* registration */) {
+  updated(registration) {
     // registration -> a ServiceWorkerRegistration instance
+    // fully customizable
+    Loading.show({
+      spinner: QSpinnerGears
+      // message: "A new update is available! Updating..."
+    });
+
+    window.location.reload(true);
   },
 
   offline() {
