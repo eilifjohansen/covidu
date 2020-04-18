@@ -152,8 +152,13 @@ export default {
               }
             });
           })
-          .catch(function(err) {
+          .catch(err => {
             console.log(err);
+
+            this.messages.push({
+              text: "Woups! Something went wrong. We're working on fixing it.",
+              from: "Covidu"
+            });
           });
 
         if (navigator.onLine == false) {
