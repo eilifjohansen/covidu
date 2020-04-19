@@ -1,7 +1,14 @@
 <template>
-  <q-page ref="pageChat" class="page-chat flex column">
+  <q-page
+    ref="pageChat"
+    class="page-chat flex column"
+    role="region"
+    aria-label="chat window"
+  >
     <div class="q-pa-md column col justify-end">
       <q-chat-message
+        tabindex="0"
+        aria-live="polite"
         v-for="message in messages"
         :key="message.id"
         :name="message.from"
@@ -26,6 +33,7 @@
       <q-toolbar>
         <q-form @submit="sendMessage" class="full-width">
           <q-input
+            aria-label="message to send"
             v-model="newMessage"
             ref="newMessage"
             id="mymessage"
