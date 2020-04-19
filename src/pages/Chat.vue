@@ -62,15 +62,17 @@
 </template>
 
 <script>
-import { date } from "quasar";
+import { date, uid } from "quasar";
+
 let timeStamp = Date.now();
 let timeNow = date.formatDate(timeStamp, "HH:mm");
+let uniqueId = uid();
 
 export default {
   data() {
     return {
       newMessage: "",
-      userId: Date.now(),
+      userId: uniqueId,
       messages: [
         {
           id: 1,
