@@ -175,14 +175,16 @@ export default {
           })
           .catch(err => {
             console.log(err);
-
-            this.messages.push({
-              text: "Woups! Something went wrong. We're working on fixing it.",
-              from: "Covidu",
-              stamp: new Date()
-                .toLocaleTimeString()
-                .replace(/(:\d{2}| [AP]M)$/, "")
-            });
+            if (navigator.onLine != false) {
+              this.messages.push({
+                text:
+                  "Woups! Something went wrong. We're working on fixing it.",
+                from: "Covidu",
+                stamp: new Date()
+                  .toLocaleTimeString()
+                  .replace(/(:\d{2}| [AP]M)$/, "")
+              });
+            }
           });
 
         if (navigator.onLine == false) {
