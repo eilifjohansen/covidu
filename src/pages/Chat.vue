@@ -6,6 +6,7 @@
         :key="message.id"
         :name="message.from"
         :text="[message.text]"
+        :text-sanitize="message.from == 'Me' ? true : false"
         :sent="message.from == 'Me' ? true : false"
         class="text-body2"
         :stamp="message.stamp"
@@ -22,7 +23,6 @@
     </div>
     <q-footer>
       <q-toolbar>
-        {{ myDate }}
         <q-form @submit="sendMessage" class="full-width">
           <q-input
             v-model="newMessage"
