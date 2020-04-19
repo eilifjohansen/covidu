@@ -8,7 +8,8 @@
         :text="[message.text]"
         :sent="message.from == 'Me' ? true : false"
         class="text-body2"
-        ><!-- :stamp="message.stamp" -->
+        :stamp="message.stamp"
+      >
         <template v-slot:avatar v-if="message.from == 'Covidu' ? true : false">
           <img
             aria-hidden="true"
@@ -21,6 +22,7 @@
     </div>
     <q-footer>
       <q-toolbar>
+        {{ myDate }}
         <q-form @submit="sendMessage" class="full-width">
           <q-input
             v-model="newMessage"
@@ -60,6 +62,10 @@
 </template>
 
 <script>
+import { date } from "quasar";
+let timeStamp = Date.now();
+let timeNow = date.formatDate(timeStamp, "HH:mm");
+
 export default {
   data() {
     return {
@@ -71,7 +77,7 @@ export default {
           text:
             "Hi, what country would you like to check the latest coronavirus stats in?",
           from: "Covidu",
-          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
+          stamp: timeNow
         }
       ],
       online: true
@@ -83,9 +89,7 @@ export default {
         this.messages.push({
           text: this.newMessage,
           from: "Me",
-          stamp: new Date()
-            .toLocaleTimeString("no-NB")
-            .replace(/(:\d{2}| [AP]M)$/, "")
+          stamp: timeNow
         });
       }
 
@@ -93,13 +97,13 @@ export default {
         this.messages.push({
           text: this.newMessage,
           from: "Me",
-          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
+          stamp: timeNow
         });
         this.messages.push({
           text:
             "Woups! I don't know any countries with only 1 character... Try again.",
           from: "Covidu",
-          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
+          stamp: timeNow
         });
       }
 
@@ -107,13 +111,13 @@ export default {
         this.messages.push({
           text: "[large message]",
           from: "Me",
-          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
+          stamp: timeNow
         });
         this.messages.push({
           text:
             "Woups! I can not respond to messages with more than 100 characters... Try again.",
           from: "Covidu",
-          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
+          stamp: timeNow
         });
       }
 
@@ -121,12 +125,12 @@ export default {
         this.messages.push({
           text: "[Empty message]",
           from: "Me",
-          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
+          stamp: timeNow
         });
         this.messages.push({
           text: "Woups! That message looks empty... Try saying a country name.",
           from: "Covidu",
-          stamp: new Date().toLocaleTimeString().replace(/(:\d{2}| [AP]M)$/, "")
+          stamp: timeNow
         });
       }
 
@@ -151,14 +155,7 @@ export default {
                   this.messages.push({
                     text: result.replace(/\n/g, "<br />"),
                     from: "Covidu",
-                    stamp: new Date()
-                      .toLocaleTimeString("no-NB")
-                      .replace(
-                        /(:\d{2}| [AP]M)$/,
-                        ""
-                      ) /*+
-                    " " +
-                    new Date().toLocaleDateString("no-NB")*/
+                    stamp: timeNow
                   });
                 }
               }
@@ -171,14 +168,7 @@ export default {
                       response.status +
                       ").",
                     from: "Covidu",
-                    stamp: new Date()
-                      .toLocaleTimeString("no-NB")
-                      .replace(
-                        /(:\d{2}| [AP]M)$/,
-                        ""
-                      ) /*+
-                    " " +
-                    new Date().toLocaleDateString("no-NB")*/
+                    stamp: timeNow
                   });
                 }
               }
