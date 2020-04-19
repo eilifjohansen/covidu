@@ -147,18 +147,40 @@ export default {
           .then(response => {
             response.text().then(result => {
               if (result != "Accepted") {
-                this.messages.push({
-                  text: result.replace(/\n/g, "<br />"),
-                  from: "Covidu",
-                  stamp: new Date()
-                    .toLocaleTimeString("no-NB")
-                    .replace(
-                      /(:\d{2}| [AP]M)$/,
-                      ""
-                    ) /*+
+                if (result != "") {
+                  this.messages.push({
+                    text: result.replace(/\n/g, "<br />"),
+                    from: "Covidu",
+                    stamp: new Date()
+                      .toLocaleTimeString("no-NB")
+                      .replace(
+                        /(:\d{2}| [AP]M)$/,
+                        ""
+                      ) /*+
                     " " +
                     new Date().toLocaleDateString("no-NB")*/
-                });
+                  });
+                }
+              }
+
+              if (result != "Accepted") {
+                if (result == "") {
+                  this.messages.push({
+                    text:
+                      "Oh no! There seems to be an error. I could not find any response message (status code: " +
+                      response.status +
+                      ").",
+                    from: "Covidu",
+                    stamp: new Date()
+                      .toLocaleTimeString("no-NB")
+                      .replace(
+                        /(:\d{2}| [AP]M)$/,
+                        ""
+                      ) /*+
+                    " " +
+                    new Date().toLocaleDateString("no-NB")*/
+                  });
+                }
               }
 
               if (result == "Accepted") {
