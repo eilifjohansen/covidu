@@ -15,6 +15,7 @@
           <img
             aria-hidden="true"
             role="presentation"
+            alt=""
             class="q-message-avatar q-message-avatar--sent"
             src="statics/covidu.png"
           />
