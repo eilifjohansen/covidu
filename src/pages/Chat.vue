@@ -64,8 +64,6 @@
 <script>
 import { date, uid } from "quasar";
 
-let timeStamp = Date.now();
-let timeNow = date.formatDate(timeStamp, "HH:mm");
 let uniqueId = uid();
 
 export default {
@@ -79,7 +77,7 @@ export default {
           text:
             "Hi, what country would you like to check the latest coronavirus stats in?",
           from: "Covidu",
-          stamp: timeNow
+          stamp: date.formatDate(Date.now(), "HH:mm")
         }
       ],
       online: true
@@ -91,7 +89,7 @@ export default {
         this.messages.push({
           text: this.newMessage,
           from: "Me",
-          stamp: timeNow
+          stamp: date.formatDate(Date.now(), "HH:mm")
         });
       }
 
@@ -99,13 +97,13 @@ export default {
         this.messages.push({
           text: this.newMessage,
           from: "Me",
-          stamp: timeNow
+          stamp: date.formatDate(Date.now(), "HH:mm")
         });
         this.messages.push({
           text:
             "Woups! I don't know any countries with only 1 character... Try again.",
           from: "Covidu",
-          stamp: timeNow
+          stamp: date.formatDate(Date.now(), "HH:mm")
         });
       }
 
@@ -113,13 +111,13 @@ export default {
         this.messages.push({
           text: "[large message]",
           from: "Me",
-          stamp: timeNow
+          stamp: date.formatDate(Date.now(), "HH:mm")
         });
         this.messages.push({
           text:
             "Woups! I can not respond to messages with more than 100 characters... Try again.",
           from: "Covidu",
-          stamp: timeNow
+          stamp: date.formatDate(Date.now(), "HH:mm")
         });
       }
 
@@ -127,12 +125,12 @@ export default {
         this.messages.push({
           text: "[Empty message]",
           from: "Me",
-          stamp: timeNow
+          stamp: date.formatDate(Date.now(), "HH:mm")
         });
         this.messages.push({
           text: "Woups! That message looks empty... Try saying a country name.",
           from: "Covidu",
-          stamp: timeNow
+          stamp: date.formatDate(Date.now(), "HH:mm")
         });
       }
 
@@ -157,7 +155,7 @@ export default {
                   this.messages.push({
                     text: result.replace(/\n/g, "<br />"),
                     from: "Covidu",
-                    stamp: timeNow
+                    stamp: date.formatDate(Date.now(), "HH:mm")
                   });
                 }
               }
@@ -170,7 +168,7 @@ export default {
                       response.status +
                       ").",
                     from: "Covidu",
-                    stamp: timeNow
+                    stamp: date.formatDate(Date.now(), "HH:mm")
                   });
                 }
               }
@@ -180,9 +178,7 @@ export default {
                   text:
                     "Oh no! The place i get stats from is down for maintenance. Please try again later.",
                   from: "Covidu",
-                  stamp: new Date()
-                    .toLocaleTimeString()
-                    .replace(/(:\d{2}| [AP]M)$/, "")
+                  stamp: date.formatDate(Date.now(), "HH:mm")
                 });
               }
             });
@@ -194,9 +190,7 @@ export default {
                 text:
                   "Woups! Something went wrong. We're working on fixing it.",
                 from: "Covidu",
-                stamp: new Date()
-                  .toLocaleTimeString()
-                  .replace(/(:\d{2}| [AP]M)$/, "")
+                stamp: date.formatDate(Date.now(), "HH:mm")
               });
             }
           });
@@ -207,9 +201,7 @@ export default {
             text:
               "You have lost connection to the internet... Try to reload the page.",
             from: "Covidu",
-            stamp: new Date()
-              .toLocaleTimeString()
-              .replace(/(:\d{2}| [AP]M)$/, "")
+            stamp: date.formatDate(Date.now(), "HH:mm")
           });
         }
       }
@@ -283,6 +275,10 @@ export default {
 
 .q-message-text-content--sent .q-message-stamp {
   color: #fff !important;
+}
+
+.q-message-text-content--received .q-message-stamp {
+  text-align: right;
 }
 
 .q-message-text--received {
