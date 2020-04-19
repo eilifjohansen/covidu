@@ -6,10 +6,10 @@
         :key="message.id"
         :name="message.from"
         :text="[message.text]"
-        :text-sanitize="message.from == 'Me' ? true : false"
         :sent="message.from == 'Me' ? true : false"
         class="text-body2"
         :stamp="message.stamp"
+        text-sanitize
       >
         <template v-slot:avatar v-if="message.from == 'Covidu' ? true : false">
           <img
@@ -153,7 +153,7 @@ export default {
               if (result != "Accepted") {
                 if (result != "") {
                   this.messages.push({
-                    text: result.replace(/\n/g, "<br />"),
+                    text: result.replace(/\n/g, "\r\n"),
                     from: "Covidu",
                     stamp: date.formatDate(Date.now(), "HH:mm")
                   });
@@ -288,6 +288,7 @@ export default {
 
 .q-message-text-content--received {
   color: #000;
+  white-space: pre;
 }
 
 .q-message-avatar--sent {
