@@ -159,7 +159,6 @@ export default {
                   });
                 }
               }
-
               if (result != "Accepted") {
                 if (result == "") {
                   this.messages.push({

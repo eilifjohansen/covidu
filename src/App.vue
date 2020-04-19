@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import "whatwg-fetch";
 export default {
   name: "App"
 };
