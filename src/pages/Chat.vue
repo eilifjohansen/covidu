@@ -122,7 +122,7 @@ export default {
       }
 
       if (this.newMessage.length == 0) {
-        this.messages.push({
+        /*this.messages.push({
           text: "[Empty message]",
           from: "Me",
           stamp: date.formatDate(Date.now(), "HH:mm")
@@ -131,7 +131,7 @@ export default {
           text: "Woups! That message looks empty... Try saying a country name.",
           from: "Covidu",
           stamp: date.formatDate(Date.now(), "HH:mm")
-        });
+        });*/
       }
 
       const payload = {
@@ -209,7 +209,7 @@ export default {
     },
     clearMessage() {
       this.newMessage = "";
-      // this.$refs.newMessage.focus()
+      this.$refs.newMessage.focus();
     },
     onLine() {
       if (navigator.onLine != false) {
