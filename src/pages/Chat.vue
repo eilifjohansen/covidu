@@ -218,7 +218,7 @@ export default {
     },
     clearMessage() {
       this.$refs.newMessage.focus();
-      this.newMessage = "";
+      this.newMessage = " ";
     },
     onLine() {
       if (navigator.onLine != false) {
