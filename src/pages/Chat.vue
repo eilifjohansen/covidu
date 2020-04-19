@@ -153,7 +153,7 @@ export default {
               if (result != "Accepted") {
                 if (result != "") {
                   this.messages.push({
-                    text: result.replace(/\n/g, "\r\n"),
+                    text: result,
                     from: "Covidu",
                     stamp: date.formatDate(Date.now(), "HH:mm")
                   });
