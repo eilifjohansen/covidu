@@ -121,8 +121,8 @@ export default {
         });
       }
 
-      if (this.newMessage.length == 0) {
-        /*this.messages.push({
+      /* if (this.newMessage.length == 0) {
+        this.messages.push({
           text: "[Empty message]",
           from: "Me",
           stamp: date.formatDate(Date.now(), "HH:mm")
@@ -131,8 +131,8 @@ export default {
           text: "Woups! That message looks empty... Try saying a country name.",
           from: "Covidu",
           stamp: date.formatDate(Date.now(), "HH:mm")
-        });*/
-      }
+        });
+      }*/
 
       const payload = {
         message: this.newMessage,
@@ -287,7 +287,7 @@ export default {
 
 .q-message-text-content--received {
   color: #000;
-  white-space: pre;
+  white-space: pre-line;
 }
 
 .q-message-avatar--sent {
