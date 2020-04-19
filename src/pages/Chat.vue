@@ -94,6 +94,7 @@ export default {
   },
   methods: {
     sendMessage() {
+      this.$refs.newMessage.focus();
       if (this.newMessage.length >= 2 && this.newMessage.length <= 100) {
         this.messages.push({
           text: this.newMessage,
@@ -218,7 +219,7 @@ export default {
     },
     clearMessage() {
       this.$refs.newMessage.focus();
-      this.newMessage = " ";
+      this.newMessage = "";
     },
     onLine() {
       if (navigator.onLine != false) {
