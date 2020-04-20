@@ -49,7 +49,10 @@
           </h2>
         </div>
       </div>
-      <div style="padding: 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.12);">
+      <div
+        style="padding: 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.12);"
+        class="text-body2"
+      >
         <p style="margin-top: 16px">
           Hi, I'm Covidu!
         </p>
@@ -59,7 +62,7 @@
         </p>
 
         <p>
-          My data source is:
+          Data source:
           <a
             href="https://coronavirus.jhu.edu/"
             target="_blank"
@@ -81,6 +84,7 @@
       </div>
       <q-list style="margin-top: 10px">
         <EssentialLink
+          class="text-body2"
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"

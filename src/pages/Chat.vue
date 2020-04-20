@@ -14,7 +14,7 @@
         :name="message.from"
         :text="[message.text]"
         :sent="message.from == 'Me' ? true : false"
-        class="text-body1"
+        class="text-body2"
         :stamp="message.stamp"
         text-sanitize
         color="white"
@@ -45,6 +45,7 @@
             rounded
             label="Message"
             dense
+            class="text-body2"
           >
             <template v-slot:after>
               <q-btn
@@ -335,9 +336,6 @@ export default {
 }
 
 .q-field--dense .q-field__label {
-  font-size: 1rem;
-  letter-spacing: 0.03125em;
-  font-weight: 400;
   top: 15px;
 }
 
