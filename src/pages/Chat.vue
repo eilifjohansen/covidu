@@ -8,7 +8,7 @@
     <div class="q-pa-md column col justify-end">
       <q-chat-message
         tabindex="0"
-        aria-live="polite"
+        :aria-live="message.ariaLive != 'off' ? 'polite' : message.ariaLive"
         v-for="message in messages"
         :key="message.id"
         :name="message.from"
@@ -80,13 +80,15 @@ export default {
     return {
       newMessage: "",
       userId: uniqueId,
+      ariaLive: "",
       messages: [
         {
           id: 1,
           text:
             "Hi, what country would you like to check the latest coronavirus stats in?",
           from: "Covidu",
-          stamp: date.formatDate(Date.now(), "HH:mm")
+          stamp: date.formatDate(Date.now(), "HH:mm"),
+          ariaLive: "off"
         }
       ],
       online: true
