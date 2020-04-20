@@ -25,7 +25,14 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="right" side="right" bordered>
+    <q-drawer
+      show-if-above
+      v-model="right"
+      side="right"
+      bordered
+      no-swipe-close
+      no-swipe-open
+    >
       <div
         class="text-center bg-transparent"
         style="margin-top: 10px; padding-bottom: 5px;  border-bottom: 1px solid rgba(0, 0, 0, 0.12);"
