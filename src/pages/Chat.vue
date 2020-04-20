@@ -33,6 +33,8 @@
       <q-toolbar>
         <q-form @submit="sendMessage" class="full-width">
           <q-input
+            type="text"
+            name="message"
             aria-label="message to send"
             v-model="newMessage"
             ref="newMessage"
@@ -45,7 +47,7 @@
           >
             <template v-slot:after>
               <q-btn
-                size="20px"
+                size="21px"
                 aria-label="Send"
                 @click="sendMessage"
                 dense

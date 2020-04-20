@@ -14,7 +14,7 @@
         </q-toolbar-title>
 
         <q-btn
-          size="20px"
+          size="21px"
           class="only-mobile"
           dense
           flat
