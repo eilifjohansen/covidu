@@ -1,10 +1,5 @@
 <template>
-  <q-page
-    ref="pageChat"
-    class="page-chat flex column"
-    role="region"
-    aria-label="chat window"
-  >
+  <q-page ref="pageChat" class="page-chat flex column" aria-label="chat window">
     <div class="q-pa-md column col justify-end">
       <q-chat-message
         tabindex="0"
@@ -282,7 +277,7 @@ export default {
 </script>
 <style lang="scss">
 button:focus {
-  outline: 1px solid black !important;
+  box-shadow: 0 0 0pt 1pt $primary;
 }
 
 input:focus {
