@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR fFr">
+  <q-layout view="hHh lpR fFr" aria-label="Application">
     <q-header class="bg-primary text-white collapse">
       <q-toolbar>
         <q-toolbar-title>

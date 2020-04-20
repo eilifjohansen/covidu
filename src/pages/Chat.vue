@@ -27,7 +27,11 @@
     </div>
     <q-footer>
       <q-toolbar bordered bg-color="white">
-        <q-form @submit="sendMessage" class="full-width">
+        <q-form
+          @submit="sendMessage"
+          class="full-width"
+          aria-label="Compose message"
+        >
           <q-input
             type="text"
             name="message"
