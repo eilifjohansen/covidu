@@ -47,7 +47,7 @@
           >
             <template v-slot:after>
               <q-btn
-                size="22px"
+                size="20px"
                 aria-label="Send"
                 @click="sendMessage"
                 dense
