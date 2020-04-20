@@ -52,7 +52,6 @@
                 @click="sendMessage"
                 dense
                 flat
-                color="white"
                 icon="send"
                 type="submit"
               />
