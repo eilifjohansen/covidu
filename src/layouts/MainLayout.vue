@@ -3,14 +3,33 @@
     <q-header class="bg-primary text-white collapse">
       <q-toolbar>
         <q-toolbar-title>
-          <q-btn @click="doUpdate()" class="homeButton" to="/" role="link">
+          <!-- <q-btn @click="doUpdate()" class="homeButton" to="/" role="link">
             <q-avatar size="42px">
               <img src="statics/covidu.png" alt="The coronavirus chatbot" />
             </q-avatar>
             <h1 class="text-h5" style="padding-left: 10px; margin: 0px">
               Covidu
             </h1>
-          </q-btn>
+          </q-btn>-->
+
+          <div class="items-center row">
+            <h1
+              class="q-toolbar__title ellipsis col-shrink"
+              style="line-height: 0"
+            >
+              <q-avatar
+                size="42px"
+                tabindex="0"
+                to="/"
+                role="link"
+                @click="doUpdate()"
+              >
+                <img src="statics/covidu.png" alt="The coronavirus chatbot" />
+              </q-avatar>
+
+              Covidu
+            </h1>
+          </div>
         </q-toolbar-title>
 
         <q-btn
@@ -161,7 +180,7 @@ export default {
 </style>
 <style scoped>
 :focus {
-  outline: 1px solid !important;
+  outline: 1px solid white !important;
 }
 
 .homeButton .q-btn__wrapper:before {
