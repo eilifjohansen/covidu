@@ -47,7 +47,7 @@
           >
             <template v-slot:after>
               <q-btn
-                size="21px"
+                size="25px"
                 aria-label="Send"
                 @click="sendMessage"
                 dense
@@ -316,12 +316,12 @@ export default {
 
 .q-field--dense .q-field__control,
 .q-field--dense .q-field__marginal {
-  height: 45px;
+  height: 50px;
 }
 
 .q-field--dense .q-field__label {
   font-size: 14px;
-  top: 12.5px;
+  top: 15px;
 }
 
 .q-toolbar {
