@@ -154,6 +154,10 @@ export default {
 .q-btn__wrapper:before {
   box-shadow: none;
 }
+
+.q-btn__wrapper {
+  padding-left: 0px;
+}
 </style>
 <style scoped>
 :focus {
