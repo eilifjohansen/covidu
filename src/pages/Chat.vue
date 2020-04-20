@@ -14,7 +14,7 @@
         :name="message.from"
         :text="[message.text]"
         :sent="message.from == 'Me' ? true : false"
-        class="text-body1"
+        class="text-body2"
         :stamp="message.stamp"
         text-sanitize
         color="white"
