@@ -56,6 +56,7 @@
                 dense
                 flat
                 type="submit"
+                class="sendFocus"
               >
                 <q-icon name="send" size="1.2em" alt="Send" />
               </q-btn>
@@ -280,6 +281,14 @@ export default {
 };
 </script>
 <style lang="scss">
+button:focus {
+  outline: 1px solid black !important;
+}
+
+input:focus {
+  box-shadow: 0 0 0pt 0pt $primary;
+}
+
 .q-footer .q-icon {
   color: #1976d2;
 }

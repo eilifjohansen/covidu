@@ -54,7 +54,7 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="scss" scoped>
 .underline {
   text-decoration: underline !important;
   color: #1976d2;
@@ -62,5 +62,9 @@ export default {
 
 .q-item__section--side > .q-icon {
   color: #1976d2;
+}
+
+:focus {
+  outline: 1px solid black !important;
 }
 </style>

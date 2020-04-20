@@ -151,6 +151,15 @@ export default {
 };
 </script>
 <style>
+.q-btn__wrapper:before {
+  box-shadow: none;
+}
+</style>
+<style scoped>
+:focus {
+  outline: 1px solid !important;
+}
+
 .homeButton .q-btn__wrapper:before {
   box-shadow: none;
 }
@@ -164,5 +173,12 @@ export default {
   .only-mobile {
     display: none !important;
   }
+}
+
+.body.desktop .q-focusable:focus > .q-focus-helper,
+body.desktop .q-manual-focusable--focused > .q-focus-helper,
+body.desktop .q-hoverable:hover > .q-focus-helper {
+  /* background: currentColor; */
+  opacity: 0;
 }
 </style>
