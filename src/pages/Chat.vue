@@ -326,7 +326,7 @@ export default {
 }
 
 .q-field__label {
-  color: #333;
+  color: #444;
 }
 
 .q-field--dense .q-field__control,
@@ -335,7 +335,9 @@ export default {
 }
 
 .q-field--dense .q-field__label {
-  font-size: 16px;
+  font-size: 1rem;
+  letter-spacing: 0.03125em;
+  font-weight: 400;
   top: 15px;
 }
 
