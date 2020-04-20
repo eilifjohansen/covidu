@@ -342,8 +342,4 @@ export default {
 .q-toolbar {
   min-height: 60px;
 }
-
-.q-field--outlined.q-field--rounded .q-field__control {
-  border-radius: 0px;
-}
 </style>
