@@ -14,7 +14,7 @@
         :name="message.from"
         :text="[message.text]"
         :sent="message.from == 'Me' ? true : false"
-        class="text-body2"
+        class="text-body1"
         :stamp="message.stamp"
         text-sanitize
         color="white"
@@ -335,7 +335,7 @@ export default {
 }
 
 .q-field--dense .q-field__label {
-  font-size: 14px;
+  font-size: 16px;
   top: 15px;
 }
 
