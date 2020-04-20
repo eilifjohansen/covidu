@@ -335,7 +335,7 @@ export default {
 }
 
 .q-field--dense .q-field__label {
-  font-size: 15px;
+  font-size: 14px;
   top: 15px;
 }
 
