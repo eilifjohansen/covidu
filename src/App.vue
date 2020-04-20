@@ -1,5 +1,7 @@
 <template>
-  <router-view />
+  <keep-alive id="q-app">
+    <router-view />
+  </keep-alive>
 </template>
 
 <script>
