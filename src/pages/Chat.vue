@@ -50,13 +50,15 @@
             <template v-slot:after>
               <q-btn
                 size="25px"
+                style="padding-left:5px;padding-right:5px;"
                 aria-label="Send"
                 @click="sendMessage"
                 dense
                 flat
-                icon="send"
                 type="submit"
-              />
+              >
+                <q-icon name="send" size="1.2em" alt="Send" />
+              </q-btn>
             </template>
           </q-input>
         </q-form>

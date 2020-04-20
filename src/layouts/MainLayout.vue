@@ -14,14 +14,16 @@
         </q-toolbar-title>
 
         <q-btn
-          size="21px"
+          size="25px"
           class="only-mobile"
           dense
           flat
-          icon="info"
           @click="right = !right"
           aria-label="Info"
-        />
+          style="padding-left:5px;padding-right:5px;"
+        >
+          <q-icon name="info" size="1.2em" alt="Info" />
+        </q-btn>
       </q-toolbar>
     </q-header>
 
