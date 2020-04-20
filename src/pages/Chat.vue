@@ -17,6 +17,7 @@
         class="text-body1"
         :stamp="message.stamp"
         text-sanitize
+        color="white"
       >
         <template v-slot:avatar v-if="message.from == 'Covidu' ? true : false">
           <img
