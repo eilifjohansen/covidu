@@ -14,7 +14,7 @@
         :name="message.from"
         :text="[message.text]"
         :sent="message.from == 'Me' ? true : false"
-        class="text-body2"
+        class="text-body1"
         :stamp="message.stamp"
         text-sanitize
       >
@@ -326,5 +326,9 @@ export default {
 
 .q-toolbar {
   min-height: 60px;
+}
+
+.q-field--outlined.q-field--rounded .q-field__control {
+  border-radius: 0px;
 }
 </style>
