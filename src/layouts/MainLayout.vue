@@ -3,7 +3,7 @@
     <q-header class="bg-primary text-white collapse">
       <q-toolbar>
         <q-toolbar-title>
-          <q-btn @click="doUpdate()" class="homeButton" to="/">
+          <q-btn @click="doUpdate()" class="homeButton" to="/" role="link">
             <q-avatar size="42px">
               <img src="statics/covidu.png" alt="The coronavirus chatbot" />
             </q-avatar>
@@ -14,6 +14,7 @@
         </q-toolbar-title>
 
         <q-btn
+          size="23px"
           class="only-mobile"
           dense
           flat
