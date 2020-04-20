@@ -47,7 +47,7 @@
           >
             <template v-slot:after>
               <q-btn
-                size="23px"
+                size="21px"
                 aria-label="Send"
                 @click="sendMessage"
                 dense
@@ -307,5 +307,10 @@ export default {
 
 .q-message-avatar--sent {
   margin-left: 0px;
+}
+
+.q-field--outlined .q-field__control:before {
+  border: none;
+  transition: border-color 0.36s cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>
