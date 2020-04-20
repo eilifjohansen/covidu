@@ -30,7 +30,7 @@
       </q-chat-message>
     </div>
     <q-footer>
-      <q-toolbar>
+      <q-toolbar bordered bg-color="white">
         <q-form @submit="sendMessage" class="full-width">
           <q-input
             type="text"
@@ -277,6 +277,16 @@ export default {
 };
 </script>
 <style lang="scss">
+.q-footer .q-icon {
+  color: #1976d2;
+}
+
+.q-layout__section--marginal {
+  background-color: #fff;
+  color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
 .q-message-text--sent {
   background: #1976d2;
   color: #1976d2;
@@ -310,8 +320,13 @@ export default {
 }
 
 .q-field--outlined .q-field__control:before {
-  border: none;
+  border: 1px solid #1976d2;
   transition: border-color 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #f1f0f0;
+}
+
+.q-field__label {
+  color: #333;
 }
 
 .q-field--dense .q-field__control,
@@ -320,7 +335,7 @@ export default {
 }
 
 .q-field--dense .q-field__label {
-  font-size: 14px;
+  font-size: 16px;
   top: 15px;
 }
 
