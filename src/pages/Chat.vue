@@ -313,4 +313,18 @@ export default {
   border: none;
   transition: border-color 0.36s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.q-field--dense .q-field__control,
+.q-field--dense .q-field__marginal {
+  height: 45px;
+}
+
+.q-field--dense .q-field__label {
+  font-size: 14px;
+  top: 12.5px;
+}
+
+.q-toolbar {
+  min-height: 60px;
+}
 </style>
