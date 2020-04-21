@@ -114,7 +114,6 @@ module.exports = function(/* ctx */) {
         short_name: "Covidu",
         description: "Covidu – The Coronavirus Updates Chatbot",
         display: "standalone",
-        orientation: "portrait",
 
         background_color: "#1976d2",
 
