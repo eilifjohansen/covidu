@@ -15,10 +15,10 @@
           <div class="items-center row">
             <h1
               class="q-toolbar__title ellipsis col-shrink"
-              style="line-height: 0"
+              style="line-height: 0; margin-top: 5px; margin-bottom: 5px"
             >
               <q-avatar
-                size="42px"
+                size="48px"
                 tabindex="0"
                 to="/"
                 role="link"
@@ -180,7 +180,7 @@ export default {
 </style>
 <style scoped>
 :focus {
-  outline: 1px solid white !important;
+  box-shadow: 0 0 0pt 1pt #fff;
 }
 
 .homeButton .q-btn__wrapper:before {
