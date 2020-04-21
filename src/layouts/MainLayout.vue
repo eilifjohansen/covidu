@@ -23,6 +23,7 @@
                 to="/"
                 role="link"
                 @click="doUpdate()"
+                style="margin-right: 2.5px"
               >
                 <img src="statics/covidu.png" alt="The coronavirus chatbot" />
               </q-avatar>
