@@ -39,7 +39,7 @@
           flat
           @click="right = !right"
           aria-label="Info"
-          style="padding-left:5px;padding-right:5px;"
+          style="padding-left:5px;padding-right:0px;"
         >
           <q-icon name="info" size="1.2em" alt="Info" />
         </q-btn>
