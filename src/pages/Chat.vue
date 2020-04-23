@@ -31,6 +31,7 @@
           <q-input
             type="text"
             name="message"
+            autocomplete="off"
             aria-label="Message"
             v-model="newMessage"
             ref="newMessage"
