@@ -146,11 +146,6 @@ export default {
       ],
       essentialLinks: [
         {
-          title: "Covidu on Messenger",
-          icon: "chat",
-          link: "https://m.me/covidu"
-        },
-        {
           title: "About the project",
           icon: "info",
           link: "https://devpost.com/software/covidu"
