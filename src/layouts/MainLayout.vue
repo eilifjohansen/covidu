@@ -25,7 +25,11 @@
                 @click="doUpdate()"
                 style="margin-right: 2.5px"
               >
-                <img src="statics/covidu.png" alt="The coronavirus chatbot" />
+                <img
+                  src="statics/covidu.png"
+                  alt="The coronavirus chatbot"
+                  style="border: 1.5px solid #fff"
+                />
               </q-avatar>
 
               Covidu
