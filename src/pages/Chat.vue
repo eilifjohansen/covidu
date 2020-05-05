@@ -157,7 +157,7 @@ export default {
       };
 
       if (this.newMessage.length >= 2 && this.newMessage.length <= 100) {
-        fetch("https://eilif.fred.sensetecnic.com/api/public/covidu", {
+        fetch("https://nodered.sessbot.com/covidu", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
