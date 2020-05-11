@@ -46,7 +46,8 @@
             class="text-body2"
             autogrow
           >
-            <div
+            <template
+              v-slot:after
               class="q-field__append q-field__marginal row no-wrap items-center q-anchor--skip"
             >
               <button
@@ -58,7 +59,7 @@
               >
                 send
               </button>
-            </div>
+            </template>
 
             <!-- <template v-slot:after>
               <q-btn
