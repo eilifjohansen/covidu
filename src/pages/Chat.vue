@@ -115,7 +115,7 @@ export default {
     getFocus() {
       setTimeout(() => {
         this.scrollToBottom();
-      }, 20);
+      }, 100);
     },
     sendMessage() {
       this.$refs.newMessage.focus();
