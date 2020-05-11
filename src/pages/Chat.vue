@@ -29,8 +29,6 @@
       <q-toolbar bordered bg-color="white">
         <q-form @submit="sendMessage" class="full-width" @click="getFocus()">
           <q-input
-            @keyup.shift.enter="sendMessage"
-            @keyup.ctrl.enter="sendMessage"
             type="text"
             name="message"
             autocomplete="off"
@@ -44,9 +42,10 @@
             label="Message"
             dense
             class="text-body2"
-            autogrow
             style="margin-right: 40px"
-          >
+            ><!--             @keyup.shift.enter="sendMessage"
+            @keyup.ctrl.enter="sendMessage"
+             autogrow -->
             <template
               v-slot:after
               class="q-field__append q-field__marginal row no-wrap items-center q-anchor--skip"
@@ -381,8 +380,8 @@ input:focus {
 
 .q-field--dense .q-field__control,
 .q-field--dense .q-field__marginal {
-  height: auto;
-  // min-height: 45px;
+  //height: auto; // when autogrow
+  height: 50px;
 }
 
 footer > .q-toolbar {
