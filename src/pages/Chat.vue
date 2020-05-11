@@ -6,14 +6,13 @@
         :aria-live="message.ariaLive != 'off' ? 'polite' : message.ariaLive"
         v-for="message in messages"
         :key="message.id"
-        :name="message.from"
         :text="[message.text]"
         :sent="message.from == 'Me' ? true : false"
         class="text-body2"
         :stamp="message.stamp"
         text-sanitize
         color="white"
-      >
+        ><!-- :name="message.from" -->
         <template v-slot:avatar v-if="message.from == 'Covidu' ? true : false">
           <img
             aria-hidden="true"
