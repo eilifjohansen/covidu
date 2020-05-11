@@ -42,7 +42,7 @@
             label="Message"
             dense
             class="text-body2"
-            style="margin-right: 40px"
+            style="margin-right: 35px"
             ><!--             @keyup.shift.enter="sendMessage"
             @keyup.ctrl.enter="sendMessage"
              autogrow -->
@@ -54,7 +54,7 @@
                 @click="sendMessage"
                 aria-label="Send"
                 class="q-field__focusable-action material-icons q-icon notranslate absolute-bottom-right"
-                style="opacity: 1; margin-bottom: 11px; margin-right: 2.5px;"
+                style="opacity: 1;"
                 type="button"
               >
                 send
@@ -402,9 +402,10 @@ footer > .q-toolbar {
 
 .q-field__focusable-action {
   margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 5px;
+  margin-left: 0px;
   font-size: 1.2em;
+  margin-bottom: 11px;
+  margin-right: 0px;
 }
 
 .q-field--dense .q-field__label {
