@@ -27,7 +27,11 @@
     </div>
     <q-footer>
       <q-toolbar bordered bg-color="white">
-        <q-form @submit="sendMessage" class="full-width">
+        <q-form
+          @submit="sendMessage"
+          class="full-width"
+          @click="scrollToBottom()"
+        >
           <q-input
             type="text"
             name="message"
@@ -36,7 +40,6 @@
             v-model="newMessage"
             ref="newMessage"
             id="mymessage"
-            @click="scrollToBottom()"
             bg-color="white"
             outlined
             rounded
