@@ -27,11 +27,7 @@
     </div>
     <q-footer>
       <q-toolbar bordered bg-color="white">
-        <q-form
-          @submit="sendMessage"
-          class="full-width"
-          @click="scrollToBottom()"
-        >
+        <q-form @submit="sendMessage" class="full-width" @click="getFocus()">
           <q-input
             type="text"
             name="message"
@@ -116,7 +112,11 @@ export default {
     };
   },
   methods: {
-    getFocus() {},
+    getFocus() {
+      setTimeout(function() {
+        this.scrollToBottom();
+      }, 1000);
+    },
     sendMessage() {
       this.$refs.newMessage.focus();
 
