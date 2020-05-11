@@ -45,6 +45,7 @@
             dense
             class="text-body2"
             autogrow
+            style="margin-right: 40px"
           >
             <template
               v-slot:after
@@ -53,8 +54,8 @@
               <button
                 @click="sendMessage"
                 aria-label="Send"
-                class="q-field__focusable-action material-icons q-icon notranslate"
-                style="opacity: 1"
+                class="q-field__focusable-action material-icons q-icon notranslate absolute-bottom-right"
+                style="opacity: 1; margin-bottom: 11px; margin-right: 2.5px;"
                 type="button"
               >
                 send
@@ -401,7 +402,10 @@ footer > .q-toolbar {
 }
 
 .q-field__focusable-action {
-  margin-top: -12.5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
+  font-size: 1.2em;
 }
 
 .q-field--dense .q-field__label {
