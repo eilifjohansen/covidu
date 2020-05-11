@@ -29,6 +29,8 @@
       <q-toolbar bordered bg-color="white">
         <q-form @submit="sendMessage" class="full-width" @click="getFocus()">
           <q-input
+            @keyup.shift.enter="sendMessage"
+            @keyup.ctrl.enter="sendMessage"
             type="text"
             name="message"
             autocomplete="off"
@@ -42,6 +44,7 @@
             label="Message"
             dense
             class="text-body2"
+            autogrow
           >
             <div
               class="q-field__append q-field__marginal row no-wrap items-center q-anchor--skip"
@@ -171,7 +174,7 @@ export default {
       }*/
 
       const payload = {
-        message: this.newMessage,
+        message: this.newMessage.replace(/(\r\n|\n|\r)/gm, " "),
         userid: this.userId,
         timestamp: Date.now()
       };
@@ -323,6 +326,7 @@ input:focus {
 .q-message-text-content--sent {
   color: #fff;
   text-align: right;
+  white-space: pre-line;
 }
 
 .q-message-text-content--sent .q-message-stamp {
@@ -357,9 +361,46 @@ input:focus {
   color: #444;
 }
 
+.q-field--dense .q-field__label {
+  top: 15px !important;
+}
+
+.q-textarea.q-field--dense .q-field__native {
+  padding-top: 13px;
+  padding-bottom: 12.5px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  overflow: hidden;
+}
+
+.field__control-container {
+  padding-bottom: 0px;
+}
+
 .q-field--dense .q-field__control,
 .q-field--dense .q-field__marginal {
-  height: 50px;
+  height: auto;
+  // min-height: 45px;
+}
+
+footer > .q-toolbar {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.q-field__native {
+  color: rgba(0, 0, 0, 1) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.00937em;
+}
+.q-textarea.q-field--dense.q-field--labeled .q-field__native {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+.q-field__focusable-action {
+  margin-top: -12.5px;
 }
 
 .q-field--dense .q-field__label {
