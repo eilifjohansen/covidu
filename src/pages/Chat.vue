@@ -36,6 +36,7 @@
             v-model="newMessage"
             ref="newMessage"
             id="mymessage"
+            @click="scrollToBottom()"
             bg-color="white"
             outlined
             rounded
@@ -112,6 +113,7 @@ export default {
     };
   },
   methods: {
+    getFocus() {},
     sendMessage() {
       this.$refs.newMessage.focus();
 
