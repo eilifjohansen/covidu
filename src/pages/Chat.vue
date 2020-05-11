@@ -43,7 +43,21 @@
             dense
             class="text-body2"
           >
-            <template v-slot:after>
+            <div
+              class="q-field__append q-field__marginal row no-wrap items-center q-anchor--skip"
+            >
+              <button
+                @click="sendMessage"
+                aria-label="Send"
+                class="q-field__focusable-action material-icons q-icon notranslate"
+                style="opacity: 1"
+                type="button"
+              >
+                send
+              </button>
+            </div>
+
+            <!-- <template v-slot:after>
               <q-btn
                 size="25px"
                 style="padding-left:5px;padding-right:5px;"
@@ -56,7 +70,7 @@
               >
                 <q-icon name="send" size="1.2em" alt="Send" />
               </q-btn>
-            </template>
+            </template>-->
           </q-input>
         </q-form>
       </q-toolbar>
