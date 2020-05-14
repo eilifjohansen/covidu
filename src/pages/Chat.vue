@@ -54,7 +54,7 @@
                 aria-label="Send"
                 class="q-field__focusable-action material-icons q-icon notranslate absolute-bottom-right"
                 style="opacity: 1;"
-                type="button"
+                type="submit"
               >
                 send
               </button>
