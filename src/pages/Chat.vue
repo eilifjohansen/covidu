@@ -352,7 +352,7 @@ input:focus {
 }
 
 .q-field--outlined .q-field__control:before {
-  border: 1px solid #1976d2;
+  border: 1px solid rgba(0, 0, 0, 0.24);
   transition: border-color 0.36s cubic-bezier(0.4, 0, 0.2, 1);
   background: #f1f0f0;
 }
