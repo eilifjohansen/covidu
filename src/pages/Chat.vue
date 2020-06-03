@@ -1,35 +1,29 @@
 <template>
   <q-page ref="pageChat" class="page-chat flex column" aria-label="chat window">
-    <q-scroll-area style="height: calc(100vh - 124px); max-width: 100%;">
-      <div class="q-pa-md column col justify-end">
-        <q-chat-message
-          tabindex="0"
-          :aria-live="message.ariaLive != 'off' ? 'polite' : message.ariaLive"
-          v-for="message in messages"
-          :key="message.id"
-          :text="[message.text]"
-          :sent="message.from == 'Me' ? true : false"
-          class="text-body2"
-          :stamp="message.stamp"
-          text-sanitize
-          color="white"
-        >
-          <template
-            v-slot:avatar
-            v-if="message.from == 'Covidu' ? true : false"
-          >
-            <img
-              aria-hidden="true"
-              role="presentation"
-              alt=""
-              class="q-message-avatar q-message-avatar--sent"
-              src="statics/covidu.png"
-            />
-          </template>
-        </q-chat-message>
-      </div>
-    </q-scroll-area>
-
+    <div class="q-pa-md column col justify-end">
+      <q-chat-message
+        tabindex="0"
+        :aria-live="message.ariaLive != 'off' ? 'polite' : message.ariaLive"
+        v-for="message in messages"
+        :key="message.id"
+        :text="[message.text]"
+        :sent="message.from == 'Me' ? true : false"
+        class="text-body2"
+        :stamp="message.stamp"
+        text-sanitize
+        color="white"
+      >
+        <template v-slot:avatar v-if="message.from == 'Covidu' ? true : false">
+          <img
+            aria-hidden="true"
+            role="presentation"
+            alt=""
+            class="q-message-avatar q-message-avatar--sent"
+            src="statics/covidu.png"
+          />
+        </template>
+      </q-chat-message>
+    </div>
     <q-footer>
       <q-toolbar bordered bg-color="white">
         <q-form @submit="sendMessage" class="full-width" @click="getFocus()">
