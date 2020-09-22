@@ -12,7 +12,7 @@
         :stamp="message.stamp"
         text-sanitize
         color="white"
-      >
+        ><!-- :name="message.from" -->
         <template v-slot:avatar v-if="message.from == 'Covidu' ? true : false">
           <img
             aria-hidden="true"
@@ -42,7 +42,9 @@
             dense
             class="text-body2"
             style="margin-right: 35px"
-          >
+            ><!--             @keyup.shift.enter="sendMessage"
+            @keyup.ctrl.enter="sendMessage"
+             autogrow -->
             <template
               v-slot:after
               class="q-field__append q-field__marginal row no-wrap items-center q-anchor--skip"
@@ -57,6 +59,21 @@
                 send
               </button>
             </template>
+
+            <!-- <template v-slot:after>
+              <q-btn
+                size="25px"
+                style="padding-left:5px;padding-right:5px;"
+                aria-label="Send"
+                @click="sendMessage"
+                dense
+                flat
+                type="submit"
+                class="sendFocus"
+              >
+                <q-icon name="send" size="1.2em" alt="Send" />
+              </q-btn>
+            </template>-->
           </q-input>
         </q-form>
       </q-toolbar>
@@ -143,6 +160,19 @@ export default {
         });
       }
 
+      /* if (this.newMessage.length == 0) {
+        this.messages.push({
+          text: "[Empty message]",
+          from: "Me",
+          stamp: date.formatDate(Date.now(), "HH:mm")
+        });
+        this.messages.push({
+          text: "Woups! That message looks empty... Try saying a country name.",
+          from: "Covidu",
+          stamp: date.formatDate(Date.now(), "HH:mm")
+        });
+      }*/
+
       const payload = {
         message: this.newMessage.replace(/(\r\n|\n|\r)/gm, " "),
         userid: this.userId,
@@ -150,7 +180,7 @@ export default {
       };
 
       if (this.newMessage.length >= 2 && this.newMessage.length <= 100) {
-        fetch("https://covidu.eilifjohansen.com/covidu", {
+        fetch("https://nodered.sessbot.com/covidu", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -204,6 +234,7 @@ export default {
           });
 
         if (navigator.onLine == false) {
+          // true|false
           this.messages.push({
             text:
               "You have lost connection to the internet... Try to reload the page.",
@@ -212,6 +243,7 @@ export default {
           });
         }
       }
+
       this.clearMessage();
     },
     clearMessage() {
@@ -268,11 +300,6 @@ export default {
 };
 </script>
 <style lang="scss">
-.q-scroll-area-tasks {
-  display: flex;
-  flex-grow: 1;
-}
-
 button:focus {
   box-shadow: 0 0 0pt 1pt $primary;
 }
@@ -352,6 +379,7 @@ input:focus {
 
 .q-field--dense .q-field__control,
 .q-field--dense .q-field__marginal {
+  //height: auto; // when autogrow
   height: 50px;
 }
 
