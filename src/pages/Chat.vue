@@ -150,7 +150,7 @@ export default {
       };
 
       if (this.newMessage.length >= 2 && this.newMessage.length <= 100) {
-        fetch("https://nodegreen.sessbot.com/covidu", {
+        fetch("https://covidu.eilifjohansen.com/covidu", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
